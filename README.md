@@ -10,4 +10,6 @@ Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).\
 2) Book on [exploratory model analysis](https://ema.drwhy.ai/) with more details on the methods used in this lecture.\
 3) Some examples for using gglot2 with underling code in the [R graph gallery](https://r-graph-gallery.com/ggplot2-package.html)
 4) Book on [R for data science](https://r4ds.had.co.nz/) using the tidyverse.\
+\
+...[Tetrowdice](https://play.google.com/store/apps/details?id=com.NilsRaabe.Tetrowdice) for android users. 
 
