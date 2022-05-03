@@ -37,3 +37,20 @@ model_cdc <-  DALEX::explain(cdc_risk,
 
 # Performance analysis
 mp_cdc <- model_performance(model_cdc, cutoff = 0.1)
+
+# Create tree model
+library(partykit)
+tree <- ctree(Death ~., covid_spring, control = ctree_control(alpha = 0.0001))
+
+# wrap tree
+model_tree <-  DALEX::explain(tree,
+                              predict_function = function(m, x) predict(m, x, type = "prob")[,2],   
+                              data = covid_summer[,-8],
+                              y = covid_summer$Death == "Yes",
+                              type = "classification",
+                              label = "Tree",
+                              verbose = FALSE)
+
+# tree performance
+mp_tree <- model_performance(model_tree, cutoff = 0.1)
+
