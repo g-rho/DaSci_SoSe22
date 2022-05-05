@@ -35,14 +35,15 @@ model_cdc <-  DALEX::explain(cdc_risk,
                              type  = "classification",
                              label = "CDC")
 
-# Performance analysis
+## Performance analysis
 mp_cdc <- model_performance(model_cdc, cutoff = 0.1)
 
-# Create tree model
+
+## Create tree model
 library(partykit)
 tree <- ctree(Death ~., covid_spring, control = ctree_control(alpha = 0.0001))
 
-# wrap tree
+## wrap tree
 model_tree <-  DALEX::explain(tree,
                               predict_function = function(m, x) predict(m, x, type = "prob")[,2],   
                               data = covid_summer[,-8],
@@ -51,6 +52,32 @@ model_tree <-  DALEX::explain(tree,
                               label = "Tree",
                               verbose = FALSE)
 
-# tree performance
+## tree performance
 mp_tree <- model_performance(model_tree, cutoff = 0.1)
+
+
+## Create random forest model using mlr3
+
+## set up task
+library("mlr3")
+covid_task <- TaskClassif$new(id = "covid_spring", backend = covid_spring, target = "Death", positive = "Yes")
+
+## set up learner
+library("mlr3learners")
+covid_ranger <- lrn("classif.ranger", predict_type = "prob", num.trees = 25)
+
+## Train learner
+covid_ranger$train(covid_task) # Training!  (..note: this is done on the spring data!)
+
+# Wrap model 
+model_ranger <-  explain(covid_ranger,
+                         predict_function = function(m,x) predict(m, x, predict_type = "prob")[,1],
+                         data = covid_summer[,-8],
+                         y = covid_summer$Death == "Yes",
+                         type = "classification",
+                         label = "Ranger",
+                         verbose = FALSE)
+
+## forest performance
+mp_ranger <- model_performance(model_ranger)
 
