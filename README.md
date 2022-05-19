@@ -5,7 +5,7 @@
 [Script](https://htmlpreview.github.io/?https://raw.githubusercontent.com/MI2DataLab/ResponsibleML-UseR2021/main/modelsXAI.html)\
 Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).\
 \
-**New**: [mlr3 book](https://mlr3book.mlr-org.com/index.html)
+**New**: [mlr3 book](https://mlr3book.mlr-org.com/index.html)\
 \
 **Further reading**:
 - [ISL](https://www.statlearning.com/)  -- one of the best books on machine learning.\
