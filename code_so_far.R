@@ -81,3 +81,52 @@ model_ranger <-  explain(covid_ranger,
 ## forest performance
 mp_ranger <- model_performance(model_ranger)
 
+
+# hyperparameter tuning
+library("mlr3tuning")
+library("paradox")
+# covid_ranger$param_set
+search_space = ps(
+  num.trees = p_int(lower = 50, upper = 500),
+  max.depth = p_int(lower = 1, upper = 10),
+  mtry = p_int(lower = 1, upper = 7),
+  minprop = p_dbl(lower = 0.01, upper = 0.1),
+  splitrule = p_fct(levels = c("gini", "extratrees"))
+)
+
+# Set up the tuner...
+tuned_ranger = AutoTuner$new(
+  learner    = covid_ranger,
+  resampling = rsmp("cv", folds = 5),
+  measure    = msr("classif.auc"),
+  search_space = search_space,
+  terminator = trm("evals", n_evals = 10),
+  tuner    = tnr("random_search")
+)
+# ... and tune parameters...
+tuned_ranger$train(covid_task)
+# tuned_ranger$tuning_result
+
+#...finally, as always: wrap your model:
+model_tuned <-  explain(tuned_ranger,
+                        predict_function = function(m,x)
+                          m$predict_newdata(newdata = x)$prob[,1],
+                        data = covid_summer[,-8],
+                        y = covid_summer$Death == "Yes",
+                        type = "classification",
+                        label = "AutoTune",
+                        verbose = FALSE)
+
+# performance of tuned forest 
+mp_tuned <- model_performance(model_tuned)
+
+# compare performance of all models
+# align performances (un summer validation data) of all four models for comparison
+rbind(cdc    = mp_cdc$measures,
+      tree   = mp_tree$measures,
+      ranger = mp_ranger$measures,
+      tuned  = mp_tuned$measures)
+
+plot(mp_ranger, mp_tree, mp_cdc, mp_tuned, geom = "roc")
+
+
