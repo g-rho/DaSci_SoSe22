@@ -6,6 +6,7 @@
 Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).\
 \
 **New**: [mlr3 book](https://mlr3book.mlr-org.com/index.html)\
+**New**: [Comprehensive paper on Hyperparameter Optimization](https://arxiv.org/abs/2107.05847)\
 \
 **Further reading**:
 - [ISL](https://www.statlearning.com/)  -- one of the best books on machine learning.\
@@ -13,5 +14,4 @@ Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).\
 - Some examples for using gglot2 with underling code in the [R graph gallery](https://r-graph-gallery.com/ggplot2-package.html)
 - Book on [R for data science](https://r4ds.had.co.nz/) using the tidyverse.\
 \
-...[Tetrowdice](https://play.google.com/store/apps/details?id=com.NilsRaabe.Tetrowdice) for android users. 
-
+[Sheet to insert your kaggle results:](https://docs.google.com/spreadsheets/d/1O3Ft7GbJ1hqPAjUR4bQ16ahWxeK0VXxL3B9XckXXo4w/edit?usp=sharing)
