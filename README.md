@@ -4,9 +4,9 @@
 [Comic](https://betaandbit.github.io/RML/) with the underlying story.
 [Script](https://htmlpreview.github.io/?https://raw.githubusercontent.com/MI2DataLab/ResponsibleML-UseR2021/main/modelsXAI.html)
 Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).
-\\
+
 [Sheet](https://docs.google.com/spreadsheets/d/1O3Ft7GbJ1hqPAjUR4bQ16ahWxeK0VXxL3B9XckXXo4w/edit?usp=sharing) to insert your kaggle results
-\\
+
 **Further reading**:
 - **New**: [Whitepaper on mlr3shiny](https://www.ki-mv.de/whitepaper-serie/)
 - **New**: [mlr3 book](https://mlr3book.mlr-org.com/index.html)
