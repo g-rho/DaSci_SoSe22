@@ -5,11 +5,14 @@
 [Script](https://htmlpreview.github.io/?https://raw.githubusercontent.com/MI2DataLab/ResponsibleML-UseR2021/main/modelsXAI.html)\
 Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).\
 Book on [exploratory model analysis](https://ema.drwhy.ai/) with more details on the methods used in this lecture.
+*
 
-[Sheet](https://docs.google.com/spreadsheets/d/1O3Ft7GbJ1hqPAjUR4bQ16ahWxeK0VXxL3B9XckXXo4w/edit?usp=sharing) to insert your kaggle results
+**Link zum Eintragen der Kaggle-Ergebnisse sowie der Veranstaltungsevaluation finden sich auf ILIAS!**
+
 
 **Further reading**:
 - **New**: [Paper on Causal Inference](https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1752859)
+- **New**: Interactive [online tutorial](https://github.com/luebby/WWWEKI) on causal inference.
 - [Whitepaper on mlr3shiny](https://www.ki-mv.de/whitepaper-serie/)
 - [mlr3 book](https://mlr3book.mlr-org.com/index.html)
 - [ISL](https://www.statlearning.com/)  -- one of the best books on machine learning.
