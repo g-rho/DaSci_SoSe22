@@ -3,7 +3,7 @@
 
 [Comic](https://betaandbit.github.io/RML/) with the underlying story.\
 [Script](https://htmlpreview.github.io/?https://raw.githubusercontent.com/MI2DataLab/ResponsibleML-UseR2021/main/modelsXAI.html)\
-Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).
+Original [Paper](https://doi.org/10.1080/01605682.2021.1922098).\
 Book on [exploratory model analysis](https://ema.drwhy.ai/) with more details on the methods used in this lecture.
 
 [Sheet](https://docs.google.com/spreadsheets/d/1O3Ft7GbJ1hqPAjUR4bQ16ahWxeK0VXxL3B9XckXXo4w/edit?usp=sharing) to insert your kaggle results
